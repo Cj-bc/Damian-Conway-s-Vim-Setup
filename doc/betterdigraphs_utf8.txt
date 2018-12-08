@@ -1,0 +1,139 @@
+*betterdigraphs_utf8* betterdigraphs_utf8
+
+Vim global plugin for better digraph interactions...
+Maintainer:     Damian Conway
+License:        This file is placed in the public domain.
+
+==============================================================================
+
+TOC                                     *betterdigraphs_utf8_TOC*
+
+USAGE                                   |betterdigraphs_utf8_usage|
+ACCENTED CHARACTERS                     |betterdigraphs_accented_characters|
+UNACCENTED CHARACTERS                   |betterdigraphs_unaccented_characters|
+NON ALPHABETICS                         |betterdigraphs_non_alphabetics|
+BRACKETS                                |betterdigraphs_brackets|
+INVERTED PUNCTUATION                    |betterdigraphs_inverted_punctuation|
+ORDINALS                                |betterdigraphs_ordinals|
+SOME OBVIOUS PICTOGRAPHIC ALTERNATIVES  |betterdigraphs_some_obvious_pictographic_alternatives|
+
+USAGE                                   *betterdigraphs_utf8_usage*
+
+>
+ inoremap <expr>  <C-K>   BDG_GetDigraph()
+
+
+==============================================================================
+
+Digraph naming scheme:
+
+ACCENTED CHARACTERS                     *betterdigraphs_accented_characters*
+
+    Always the letter itself, followed by
+    the first character of the accent's name:
+
+    A/a   -->  acute                  (e.g.  aa --> á    YA --> Ý  )
+    G/g   -->  grave                  (e.g.  ag --> à    og --> ò  )
+    C/c   -->  circumflex or cedilla  (e.g.  AC --> Â    cc --> ç  )
+    U/u   -->  umlaut                 (e.g.  au --> ä    UU --> Ü  )
+    T/t   -->  tilde                  (e.g.  at --> ã    nt --> ñ  )
+    S/s   -->  slash                  (e.g.  os --> ø    OS --> Ø  )
+    R/r   -->  ring                   (e.g.  AR --> Å              )
+
+
+UNACCENTED CHARACTERS                   *betterdigraphs_unaccented_characters*
+
+    AE  -->  "[AE] diphthong"  -->  Æ
+    ae  -->  "[ae] diphthong"  -->  æ
+    TH  -->  "[TH]ORN          -->  Þ
+    th  -->  "[th]orn          -->  þ
+    EH  -->  "[E]T[H]          -->  Ð
+    eh  -->  "[e]t[h]          -->  ð
+    ss  -->  "long e[ss]"      -->  ß
+
+
+NON ALPHABETICS                         *betterdigraphs_non_alphabetics*
+
+  (Usually the first letter(s) of each word, except where ambiguous,
+   in which case: the first and last letters are used instead.)
+
+    ce  -->  "[ce]nt"            -->  ¢
+    ci  -->  "[ci]rcumflex"      -->  ^
+    co  -->  "[co]pyright"       -->  ©
+    de  -->  "[de]gree"          -->  °
+    mu  -->  "[mu]"              -->  µ
+    no  -->  "[no]t"             -->  ¬
+    nu  -->  "[nu]mber"          -->  #
+    pa  -->  "[pa]ragraph"       -->  ¶
+    po  -->  "[po]und"           -->  £
+    re  -->  "[re]gistered"      -->  ®
+    se  -->  "[se]ction"         -->  §
+    sp  -->  "[sp]ace"           -->  <Space>
+    ti  -->  "[ti]lde"           -->  ~
+    ye  -->  "[ye]n"             -->  ¥
+
+    as  -->  "[a]t [s]ign"       -->  @
+    bb  -->  "[b]roken [b]ar"    -->  ¦
+    bs  -->  "[b]ack [s]lash     -->  \
+    bt  -->  "[b]ack [t]ick"     -->  `
+    ds  -->  "[d]ivide [s]ign"   -->  ÷
+    ft  -->  "[f]orward [t]ick"  -->  ´
+    ms  -->  "[m]ultiply [s]ign" -->  ×
+    pm  -->  "[p]lus or [m]inus" -->  ±
+    vb  -->  "[v]ertical [b]ar"  -->  |
+
+    dr  -->  "[d]olla[r]"        -->  $
+    dt  -->  "[d]o[t]"           -->  ·
+
+
+BRACKETS                                *betterdigraphs_brackets*
+   ('l/r' for left/right; 's/c/a/d' for square/curly/angle/double-angle)
+
+    ls  -->  [    rs  -->  ]
+    lc  -->  {    rc  -->  }
+    la  -->  <    ra  -->  >
+    ld  -->  «    rd  -->  »
+
+
+INVERTED PUNCTUATION                    *betterdigraphs_inverted_punctuation*
+   (Always the character followed by 'i' for inverted)
+
+    !i  -->  ¡
+    ?i  -->  ¿
+
+
+ORDINALS                                *betterdigraphs_ordinals*
+
+   (Always the character followed by 'o')
+
+    ao  -->  ª
+    oo  -->  º
+    1o  -->  ¹
+    2o  -->  ²
+    3o  -->  ³
+
+
+SOME OBVIOUS PICTOGRAPHIC ALTERNATIVES  *betterdigraphs_some_obvious_pictographic_alternatives*
+
+   (Generally, doubling the letter produces the common variant)
+
+    ++  -->  ±
+    +-  -->  ±
+    xx  -->  ×
+
+    <<  -->  «
+    >>  -->  »
+
+    !!  -->  ¡
+    ??  -->  ¿
+
+    11  -->  ¹
+    22  -->  ²
+    33  -->  ³
+
+    14  -->  ¼
+    12  -->  ½
+    34  -->  ¾
+
+
+vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl
