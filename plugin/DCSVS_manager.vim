@@ -59,7 +59,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " path to all plugins
-let s:DCSVS_path = expand('<sfile>:p') . '/../plugin_all'
+let s:DCSVS_path = expand('<sfile>:p:h') . '/../plugin_all'
 
 if exists("DCSVS_load_SWTC")
   exec "source" s:DCSVS_path . "/SWTC.vim"
